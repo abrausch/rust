@@ -458,10 +458,12 @@ impl SystemTime {
     /// # Examples
     ///
     /// ```
-    /// use std::time::SystemTime;
+    /// use std::time::{Duration, SystemTime};
     ///
     /// let sys_time = SystemTime::now();
-    /// let difference = sys_time.duration_since(sys_time)
+    /// sleep(Duration::from_secs(1));
+    /// let new_sys_time = SystemTime::now();
+    /// let difference = new_sys_time.duration_since(sys_time)
     ///                          .expect("Clock may have gone backwards");
     /// println!("{:?}", difference);
     /// ```
